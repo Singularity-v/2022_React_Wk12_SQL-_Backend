@@ -81,7 +81,7 @@ actors = [
         "owner_id": 1,
     },
     {
-        "category": "Sences",
+        "category": "Scenes",
         "name": "Love being with you.",
         "image_2": "/images/series1_2.png",
         "image": "/images/series1.jpg",
@@ -90,7 +90,7 @@ actors = [
         "owner_id": 1,
     },
     {
-        "category": "Sences",
+        "category": "Scenes",
         "name": "Are we BTF?",
         "image_2": "/images/series2_2.jpg",
         "image": "/images/series2.jpeg",
@@ -99,7 +99,7 @@ actors = [
         "owner_id": 1,
     },
     {
-        "category": "Sences",
+        "category": "Scenes",
         "name": "So bad at playing drums.",
         "image_2": "/images/series3_2.jpg",
         "image": "/images/series3.jpg",

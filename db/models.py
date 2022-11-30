@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.sql.schema import ForeignKey
 
 
-class DbProduct(Base):
+class DbActor(Base):
     __tablename__ = 'product'
     id = Column(Integer, primary_key=True, index=True)
     category = Column(String(30), nullable=False)
@@ -27,5 +27,5 @@ class DbUser(Base):
     email = Column(String(30), unique=True, nullable=False)
     password = Column(String(255), nullable=False)
     is_admin = Column(Boolean, default=False, nullable=True)
-    created_products = relationship('DbProduct', back_populates='owner')
+    created_products = relationship('DbActor', back_populates='owner')
 

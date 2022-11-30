@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from router import product
+from router import actor
 
 
 # def setting_middleware(app):
@@ -14,15 +14,18 @@ from router import product
 #             )
 
 app = FastAPI(
-    title="Shopping Cart API",
-    description="This API was developed for teaching Fast API",
+    title="Heart Stoper Intro",
+    description="This API was developed for Fast API Homework",
     version="0.0.1",
     terms_of_service="http://localhost:5000",
 )
-app.include_router(product.router)
+app.include_router(actor.router)
 
 origins = [
-    'http://127.0.0.1:8080'
+    'http://127.0.0.1:5173',
+    'http://127.0.0.1:8080',
+    'http://127.0.0.1:8081',
+    'http://127.0.0.1:5174'
 ]
 
 app.add_middleware(

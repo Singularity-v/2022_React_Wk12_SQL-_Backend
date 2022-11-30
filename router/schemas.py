@@ -1,6 +1,7 @@
-from pydantic import BaseModel, validator
+from pydantic import BaseModel
 
-class ProductRequestSchema(BaseModel):
+
+class actorRequestSchema(BaseModel):
     category: str
     name: str
     sku: str
@@ -12,9 +13,8 @@ class ProductRequestSchema(BaseModel):
     countInStock: int
 
 
-class ProductResponseSchema(ProductRequestSchema):
+class actorResponseSchema(actorRequestSchema):
     id: int
 
     class Config():
         orm_mode = True
-

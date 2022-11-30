@@ -47,23 +47,16 @@ def get_all(db: Session):
     return db.query(DbActor).all()
 
 
-def get_product_by_id(product_id: int, db: Session):
-    product = db.query(DbActor).filter(DbActor.id == product_id).first()
-    if not product:
+def get_actor_by_id(actor_id: int, db: Session):
+    actor = db.query(DbActor).filter(DbActor.id == actor_id).first()
+    if not actor:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f'Product with id = {id} not found')
-    return product
+                            detail=f'Actor with id = {id} not found')
+    return actor
 
-
-# def get_product_by_category(category: str, db: Session):
-#     product = db.query(DbProduct).filter(DbProduct.category == category).all()
-#     if not product:
-#         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-#                             detail=f'Product with category = {id} not found')
-#     return product
-def get_product_by_category(category: str, db: Session) -> list[DbActor]:
-    product = db.query(DbActor).filter(func.upper(DbActor.category) == category.upper()).all()
-    if not product:
+def get_actor_by_category(category: str, db: Session) -> list[DbActor]:
+    actor = db.query(DbActor).filter(func.upper(DbActor.category) == category.upper()).all()
+    if not actor:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f'Product with category = {category} not found')
-    return product
+                            detail=f'Actor with category = {category} not found')
+    return actor

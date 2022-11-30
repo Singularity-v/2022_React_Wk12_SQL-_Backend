@@ -3,16 +3,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from router import actor
 
-
-# def setting_middleware(app):
-#     app.add_middleware(
-#         CORSMiddleware,
-#         allow_origins=origins,
-#         allow_credentials=True,
-#         allow_methods=["*"],
-#         allow_headers=['*']
-#             )
-
 app = FastAPI(
     title="Heart Stoper Intro",
     description="This API was developed for Fast API Homework",

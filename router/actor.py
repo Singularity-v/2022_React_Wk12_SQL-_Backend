@@ -6,8 +6,8 @@ from db import db_actor
 from typing import List
 
 router = APIRouter(
-    prefix='/api/v1/products',
-    tags=['products']
+    prefix='/api/v1/actors',
+    tags=['actors']
 )
 
 @router.post('', response_model=actorResponseSchema)
@@ -15,20 +15,20 @@ def create(request: actorRequestSchema, db: Session = Depends(get_db)):
     return db_actor.create(db, request)
 
 @router.get('/feed', response_model=List[actorResponseSchema])
-def feed_initial_products(db: Session = Depends(get_db)):
+def feed_initial_actors(db: Session = Depends(get_db)):
     return db_actor.db_feed(db)
 
 
 @router.get('/all', response_model=List[actorResponseSchema])
-def get_all_products(db: Session = Depends(get_db)):
+def get_all_actors(db: Session = Depends(get_db)):
     return db_actor.get_all(db)
 
 
-@router.get('/id/{product_id}', response_model=actorResponseSchema)
-def get_product_by_id(product_id: int, db: Session = Depends(get_db)):
-    return db_actor.get_product_by_id(product_id, db)
+@router.get('/id/{actor_id}', response_model=actorResponseSchema)
+def get_actor_by_id(actor_id: int, db: Session = Depends(get_db)):
+    return db_actor.get_actor_by_id(actor_id, db)
 
 
 @router.get("/{category}", response_model=List[actorResponseSchema])
-def get_product_by_category(category:str, db: Session = Depends(get_db)):
-    return db_actor.get_product_by_category(category, db)
+def get_actor_by_category(category:str, db: Session = Depends(get_db)):
+    return db_actor.get_actor_by_category(category, db)

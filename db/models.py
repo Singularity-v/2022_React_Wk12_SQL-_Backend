@@ -5,17 +5,14 @@ from sqlalchemy.sql.schema import ForeignKey
 
 
 class DbActor(Base):
-    __tablename__ = 'product'
+    __tablename__ = 'actor'
     id = Column(Integer, primary_key=True, index=True)
     category = Column(String(30), nullable=False)
     name = Column(String(30), nullable=False)
-    sku = Column(String(30))
-    price = Column(Integer, nullable=False)
+    image_2 = Column(String(100), nullable=False)
     image = Column(String(100), nullable=False)
     description = Column(String(100), nullable=False)
     description_long = Column(String(255), nullable=True)
-    currency = Column(String(10))
-    countInStock = Column(Integer, nullable=False)
     owner_id = Column(Integer, ForeignKey('user.id'))
     owner = relationship('DbUser', back_populates='created_products')
 

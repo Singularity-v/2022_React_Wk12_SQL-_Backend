@@ -10,13 +10,10 @@ def db_feed(db: Session):
     new_actor_list = [DbActor(
         category=actor["category"],
         name=actor["name"],
-        sku=actor["sku"],
-        price=actor["price"],
+        image_2=actor["image_2"],
         image=actor["image"],
         description=actor["description"],
         description_long=actor["description_long"],
-        currency=actor["currency"],
-        countInStock=actor["countInStock"]
     ) for actor in actors]
     db.query(DbActor).delete()
     db.commit()
@@ -29,13 +26,10 @@ def create(db: Session, request: actorRequestSchema):
     new_actor = DbActor(
         category=request.category,
         name=request.name,
-        sku=request.sku,
-        # price=request.price,
         image=request.image,
+        image_2=request.image_2,
         description=request.description,
         description_long=request.description_long,
-        currency=request.currency,
-        countInStock=request.countInStock
     )
     db.add(new_actor)
     db.commit()
